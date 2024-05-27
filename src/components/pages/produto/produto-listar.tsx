@@ -23,5 +23,4 @@ function ProdutoListar() {
         </div>
     )
 }
-
-    export default ProdutoListar;
+  export default ProdutoListar;
