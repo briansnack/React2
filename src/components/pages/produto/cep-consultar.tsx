@@ -7,7 +7,7 @@ import { Endereco } from "./models/Endereco";
 // - Como exibir uma array na tela utilizando React
 
 function CepConsultar() {
-
+  const[cep, setCep] = useState("");
   const[logradouro, setLogradouro] = useState("");
   const[bairro, setBairro] = useState("");
   const[uf, setUf] = useState("");
@@ -16,12 +16,12 @@ function CepConsultar() {
   //Executar algum código no carregamento do componente
   useEffect(() => {
     console.log("O componente foi carregado...");
-    carregarCep();
+    // carregarCep();
   }, []);
 
   function carregarCep (){
      //FETCH ou AXIOS
-     fetch("https://viacep.com.br/ws/80020010/json/")
+     fetch("https://viacep.com.br/ws/"+ cep + "/json/")
      .then((resposta) => resposta.json())
      .then((endereco : Endereco) => {
       setLogradouro(endereco.logradouro);
@@ -34,10 +34,15 @@ function CepConsultar() {
   return (
     <div>
       <h1>Consultar CEP</h1>
+      <input type="text" placeholder="Digite o CEP" 
+      onBlur={carregarCep}
+      onChange={(e : any) => setCep(e.target.value)}
+      /> <br />
+      
       <p>{logradouro}</p> <br />
       <input type="text" value={bairro}/> <br />
       <button>{localidade}</button> <br />  
-      <h2>{uf}</h2>
+      <h2>{uf}</h2> <br />
     </div>
   );
 }
