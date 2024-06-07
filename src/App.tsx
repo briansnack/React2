@@ -1,8 +1,10 @@
 import React from 'react';
-import CepConsultar from "./components/pages/produto/cep-consultar";
+// import CepConsultar from "./components/pages/produto/cep-consultar";
+   import ProdutoListar from "./components/pages/produto/produto-listar";
 function App() {
   return (
-    <CepConsultar></CepConsultar>
+    // <CepConsultar></CepConsultar>
+    <ProdutoListar></ProdutoListar>
   );
 }
 
