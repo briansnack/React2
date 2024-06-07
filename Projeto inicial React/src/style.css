@@ -1,0 +1,12 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    color: var(--secundary-color);
+}
+h1{
+    color: var(--main-color);
+}
+:root{
+    --main-color: #ffe4c4;
+    --secundary-color: rgb(181, 123, 238);
+}
