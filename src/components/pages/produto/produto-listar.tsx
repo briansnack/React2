@@ -15,28 +15,6 @@ function ProdutoListar() {
       });
   }, []);
 
-function cadastrarProduto(){
-
-  const produto : Produto = {
-    nome: "Macarrão",
-    descricao: "Comida",
-    quantidade: 150,
-    valor : 15,
-  };
-
-  fetch("http://localhost:5143/produto/cadastrar", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(produto)
-  })
-      .then((resposta) => resposta.json())
-      .then((produto : Produto[]) => {
-        console.log(produto);
-      });
-}
-
   return (
     <div>
       <h1>Listar Produtos</h1>
@@ -64,7 +42,6 @@ function cadastrarProduto(){
           ))}
         </tbody>
       </table>
-      <button onClick={cadastrarProduto}>Cadastrar Produto</button>
     </div>
   );
 }
