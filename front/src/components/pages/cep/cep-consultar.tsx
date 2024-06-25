@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./styles.css";
-import { Endereco } from "./models/Endereco";
+import { Endereco } from "../../../models/Endereco";
 
 //Consultar os produtos da API e exibir na tela
 // - Resolver o problema de CORS (API)
