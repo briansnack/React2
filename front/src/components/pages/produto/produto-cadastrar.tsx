@@ -12,9 +12,9 @@ function cadastrarProduto(e: any){
     e.preventDefault();
         const produto : Produto = {
             nome: nome,
-            descricao: "Comida",
-            quantidade: 150,
-            valor : 15,
+            descricao: descricao,
+            quantidade: Number(quantidade),
+            valor: Number(valor),
         };
           
         fetch("http://localhost:5143/produto/cadastrar", {
@@ -36,21 +36,17 @@ function cadastrarProduto(e: any){
             <h1>Cadastrar Produto</h1>
             <form onSubmit={cadastrarProduto}>
                 <label>Nome:</label>
-                <input type="text" onChange={(e : any) => setNome(e.target.value)} 
-                required
-                />{" "}
-                {/* <label>Descrição:</label>
-                <input type="text" onChange={(e : any) => setDescricao(e.target.value)} 
-                required
-                />{" "}
+                <input type="text" onChange={(e => setNome(e.target.value))} required />{" "}
+
+                <label>Descrição:</label>
+                <input type="text" value={descricao} onChange={(e => setDescricao(e.target.value))} required />{" "}
+
                 <label>Quantidade:</label>
-                <input type="text" onChange={(e : any) => setQuantidade(e.target.value)} 
-                required
-                />{" "}
+                <input type="text"  value={quantidade} onChange={(e => setQuantidade(e.target.value))} required />{" "}
+
                 <label>Valor:</label>
-                <input type="text" onChange={(e : any) => setValor(e.target.value)} 
-                required
-                />{" "} */}
+                <input type="text"  value={valor} onChange={(e => setValor(e.target.value))} required />{" "} 
+
                 <button type="submit">Cadastrar Produto</button>
             </form>
         </div>
